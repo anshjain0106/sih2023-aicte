@@ -60,7 +60,7 @@ input {
     border-color: white;
     border-radius: 50px;
   }
-  button {
+.searchbutton{
     position: absolute;
     top: 70%;
     left: 45%;

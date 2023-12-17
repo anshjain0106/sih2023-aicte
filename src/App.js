@@ -5,13 +5,13 @@ import SearchCollege from './frontend/SearchCollege';
 
 function App() {
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //   <Route path ='/' element={<HomePage/>} />
-    //   <Route path = '/aboutus' element={<Aboutus/>} />
-    //   </Routes>
-    // </BrowserRouter>
-    <SearchCollege/>
+    <BrowserRouter>
+      <Routes>
+      <Route path ='/' element={<HomePage/>} />
+      <Route path = '/aboutus' element={<Aboutus/>} />
+      </Routes>
+    </BrowserRouter>
+    // <SearchCollege/>
   );
 }
 

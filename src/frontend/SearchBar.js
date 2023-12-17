@@ -24,7 +24,7 @@ const SearchBar = ({onSearch}) => {
             />
           </div>
           <div className="button-container">
-          <button onClick={handleSearch}><b>Search</b></button>
+          <button className="searchbutton" onClick={handleSearch}><b>Search</b></button>
         </div>
         
         </>
