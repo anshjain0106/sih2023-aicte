@@ -63,7 +63,6 @@ router.post("/searchcollege", async (req, res) => {
   //First searching in REDIS
   var collegeName = req.body.searchTerm;
 
-  console.log(req.body.searchTerm)
   collegeName += '*';
   let result = await client.ft.search(
     'idx:colleges',
