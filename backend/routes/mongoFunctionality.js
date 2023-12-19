@@ -10,8 +10,8 @@ router.post('/insertInMongo',async(req,res)=>{
     const CollegeName=req.body.collegeName
     const ProjectId=req.body.projectId
     const projectName=req.body.projectName
-    const result = await generateEmbed(projectName);
     const Undertaken = req.body.undertaken
+    const result = await generateEmbed(projectName);
     const user = await college_Schema.create({
         CollegeId: CollegeId,
         CollegeName:CollegeName,

@@ -59,8 +59,8 @@ const SearchProjects = () => {
        {
         projectList.map((item)=>{
             return  <div className="project-card">
-            <h2 className='projID'>{item.id}</h2>
             <h2 className='projTitle'>{item.value.projectname}</h2>
+            <button className='projID'>{item.id}</button>
             <p className='prof-name'>{item.value.undertaken}</p>
             <p className='college-name'>{item.value.collegename}</p>
         </div>
