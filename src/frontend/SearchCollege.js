@@ -6,8 +6,7 @@ import './Card.css'
 const SearchCollege = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [collegeList, setCollegeList] = useState([]);
-  const [collegeList1, setCollegeList1] = useState([]);
-  const [iterate ,setiterate]=useState(true)
+
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -18,19 +17,7 @@ const SearchCollege = () => {
     const collegeName = { searchTerm };
 
     const res = await axios.post("/api/college/searchcollege", collegeName)
-    console.log(res.data)
-    if(res.data.msg=="value set in reddis"){
-console.log("in i f...........")
-      setCollegeList(res.data.data);
-      setiterate(true)
-      console.log(res.data.data)
-    }
-    else{
-      console.log(res.data.data.documents)
-      setCollegeList1(res.data.data.documents)
-      setiterate(false)
-      console.log(collegeList)
-    }
+    setCollegeList(res.data.data.documents);
     //   console.log(res.data.data.documents)
   };
   return (
@@ -51,12 +38,12 @@ console.log("in i f...........")
         </div>
       </nav>
       <section className='firstsec'>
-        <img src="searchcollegebcgk.png" alt="" />
+        <img src="searchcollegebcgk2.jpg" className='searchcollegebcgk' alt="" />
         <h1>How can we help you?</h1>
         <div className="search-bar">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search About Colleges..."
             value={searchTerm}
             onChange={handleInputChange}
           />
@@ -68,32 +55,14 @@ console.log("in i f...........")
       <h3>Results</h3>
       <div className="multiplecards">
 
-       { !iterate && collegeList1.map((item)=>{
-        console.log(item.value)
+       { collegeList.map((item)=>{
         return <div className="card-container">
         <div className="card">
           <iframe src="https://www.msrit.edu" frameborder="0"></iframe>
         </div>
         <div className="card-details">
-          
-          <p className='collegename'> {item.value.name}</p>
+          <p className='collegename'>{item.value.name}</p>
           <p className='collegelocation'>Location:- {item.value.city}</p>
-          <p className='aicteid'>AICTE ID:- ID123</p>
-          <p className='zipcode'>Zipcode:-560054</p>
-          <p className='type'>Type:- Central</p>
-        </div>
-      </div>
-       })}
-        { iterate && collegeList.map((item)=>{
-        console.log(item.value)
-        return <div className="card-container">
-        <div className="card">
-          <iframe src="https://www.msrit.edu" frameborder="0"></iframe>
-        </div>
-        <div className="card-details">
-          
-          <p className='collegename'> {item.item.college_name}</p>
-          <p className='collegelocation'>Location:- {item.item.college_City}</p>
           <p className='aicteid'>AICTE ID:- ID123</p>
           <p className='zipcode'>Zipcode:-560054</p>
           <p className='type'>Type:- Central</p>
