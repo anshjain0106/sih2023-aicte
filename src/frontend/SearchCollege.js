@@ -6,7 +6,8 @@ import './Card.css'
 const SearchCollege = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [collegeList, setCollegeList] = useState([]);
-
+  const [collegeList1, setCollegeList1] = useState([]);
+  const [iterate ,setiterate]=useState(true)
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -17,7 +18,19 @@ const SearchCollege = () => {
     const collegeName = { searchTerm };
 
     const res = await axios.post("/api/college/searchcollege", collegeName)
-    setCollegeList(res.data.data.documents);
+    console.log(res.data)
+    if(res.data.msg=="value set in reddis"){
+console.log("in i f...........")
+      setCollegeList(res.data.data);
+      setiterate(true)
+      console.log(res.data.data)
+    }
+    else{
+      console.log(res.data.data.documents)
+      setCollegeList1(res.data.data.documents)
+      setiterate(false)
+      console.log(collegeList)
+    }
     //   console.log(res.data.data.documents)
   };
   return (
@@ -55,14 +68,32 @@ const SearchCollege = () => {
       <h3>Results</h3>
       <div className="multiplecards">
 
-       { collegeList.map((item)=>{
+       { !iterate && collegeList1.map((item)=>{
+        console.log(item.value)
         return <div className="card-container">
         <div className="card">
           <iframe src="https://www.msrit.edu" frameborder="0"></iframe>
         </div>
         <div className="card-details">
-          <p className='collegename'>{item.value.name}</p>
+          
+          <p className='collegename'> {item.value.name}</p>
           <p className='collegelocation'>Location:- {item.value.city}</p>
+          <p className='aicteid'>AICTE ID:- ID123</p>
+          <p className='zipcode'>Zipcode:-560054</p>
+          <p className='type'>Type:- Central</p>
+        </div>
+      </div>
+       })}
+        { iterate && collegeList.map((item)=>{
+        console.log(item.value)
+        return <div className="card-container">
+        <div className="card">
+          <iframe src="https://www.msrit.edu" frameborder="0"></iframe>
+        </div>
+        <div className="card-details">
+          
+          <p className='collegename'> {item.item.college_name}</p>
+          <p className='collegelocation'>Location:- {item.item.college_City}</p>
           <p className='aicteid'>AICTE ID:- ID123</p>
           <p className='zipcode'>Zipcode:-560054</p>
           <p className='type'>Type:- Central</p>

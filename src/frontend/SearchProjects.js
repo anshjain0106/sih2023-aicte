@@ -1,7 +1,23 @@
 import React from 'react'
 import './SearchProjects.css'
-
+import axios from 'axios';
+import { useState, useEffect } from 'react'; 
 const SearchProjects = () => {
+    const [projectname, setprojectname] = useState('');
+    const [projectList, setProjectList] = useState([]);
+    const handleChange=(e)=>{
+        setprojectname(e.target.value);
+        
+    }
+
+    const handleSubmit=async(e)=>{
+        e.preventDefault()
+        const prj={projectname}
+        const res=await axios.post('/api/college/searchProject',prj)
+        console.log(res);
+        setProjectList(res.data.data.documents)
+        console.log(projectList)
+    }
   return (
    <>
    <nav className='main-nav1'>
@@ -22,43 +38,34 @@ const SearchProjects = () => {
     <section className='firstsec'>
         <img className='project-image' src="search_projects.jpg" alt="" />
         <h1 className='searchproj'>Search for Projects</h1>
-        {/* <h1>How can we help you?</h1> */}
         <div className="search-bar">
-          <input
+          <input 
+            id='projectName'
+            name='projectName'
             type="text"
             placeholder="Search..."
-            value=""
+            value={projectname} onChange={handleChange}
           />
         </div>
         <div className="button-container">
-          <button className="searchbutton"><b>Search</b></button>
+          <button className="searchbutton" onClick={handleSubmit}><b>Search</b></button>
         </div>
     </section>
     <div className="projects-results">
         <h1>Results</h1>
     </div>
     <div className="multiple-project-cards">
-        <div className="project-card">
-            <h2 className='projID'>Project ID</h2>
-            <h2 className='projTitle'>Project Title</h2>
-            <p className='prof-name'>Professor Name</p>
-            <p className='college-id'>College ID</p>
-            <p className='college-name'>College Name</p>
+
+       {
+        projectList.map((item)=>{
+            return  <div className="project-card">
+            <h2 className='projID'>{item.id}</h2>
+            <h2 className='projTitle'>{item.value.projectname}</h2>
+            <p className='prof-name'>{item.value.undertaken}</p>
+            <p className='college-name'>{item.value.collegename}</p>
         </div>
-        <div className="project-card">
-            <h2 className='projID'>Project ID</h2>
-            <h2 className='projTitle'>Project Title</h2>
-            <p className='prof-name'>Professor Name</p>
-            <p className='college-id'>College ID</p>
-            <p className='college-name'>College Name</p>
-        </div>
-        <div className="project-card">
-            <h2 className='projID'>Project ID</h2>
-            <h2 className='projTitle'>Project Title</h2>
-            <p className='prof-name'>Professor Name</p>
-            <p className='college-id'>College ID</p>
-            <p className='college-name'>College Name</p>
-        </div>
+        }) 
+       }
     </div>
    </>
   )

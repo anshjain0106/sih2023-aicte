@@ -62,7 +62,6 @@ router.post("/searchcollege", async (req, res) => {
 
   //First searching in REDIS
   var collegeName = req.body.searchTerm;
-
   collegeName += '*';
   let result = await client.ft.search(
     'idx:colleges',
@@ -72,6 +71,7 @@ router.post("/searchcollege", async (req, res) => {
   cacheRes = JSON.parse(cacheRes);
 
   var countElements = cacheRes.total;
+  
   if (countElements == 0) {
 
     //Searching In Cockroach DB
@@ -112,11 +112,11 @@ router.post("/searchcollege", async (req, res) => {
         "city": output2.college_location
       })
     ]);
-    res.status(200).json({ success: true, data: cacheRes,msg:"value set in reddis" });
+    res.status(200).json({ success: true, data: ranked,msg:"value set in reddis" });
   }
   else {
 
-    res.status(200).json({ success: true, data: cacheRes });
+    res.status(200).json({ success: true, data: cacheRes,msg:"value returned from reddis" });
 
   }
 
@@ -124,7 +124,7 @@ router.post("/searchcollege", async (req, res) => {
 
 router.post("/searchProject",async(req,res)=>{
   //First searching in REDIS
-  console.log(projectname);
+
   var projectname = req.body.projectname;
   projectname += '*';
   let result = await client.ft.search(
