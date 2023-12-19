@@ -8,6 +8,7 @@ const SearchCollege = () => {
   const [collegeList, setCollegeList] = useState([]);
   const [collegeList1, setCollegeList1] = useState([]);
   const [iterate ,setiterate]=useState(true)
+  const [visibleResults, setVisibleResults] = useState(1);
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -23,7 +24,7 @@ const SearchCollege = () => {
 console.log("in i f...........")
       setCollegeList(res.data.data);
       setiterate(true)
-      console.log(res.data.data)
+      console.log(res.data.data) 
     }
     else{
       console.log(res.data.data.documents)
@@ -33,6 +34,11 @@ console.log("in i f...........")
     }
     //   console.log(res.data.data.documents)
   };
+
+  const handleLoadMore = () => {
+    setVisibleResults((preVisibleResults) => preVisibleResults + 1)
+  };
+
   return (
     <>
       <nav className='main-nav1'>
@@ -68,7 +74,7 @@ console.log("in i f...........")
       <h3>Results</h3>
       <div className="multiplecards">
 
-       { !iterate && collegeList1.map((item)=>{
+       { !iterate && collegeList1?.slice(0,visibleResults).map((item,index)=>{
         console.log(item.value)
         return <div className="card-container">
         <div className="card">
@@ -84,7 +90,7 @@ console.log("in i f...........")
         </div>
       </div>
        })}
-        { iterate && collegeList.map((item)=>{
+        { iterate && collegeList?.slice(0,visibleResults).map((item,index)=>{
         console.log(item.value)
         return <div className="card-container">
         <div className="card">
@@ -93,7 +99,7 @@ console.log("in i f...........")
         <div className="card-details">
           
           <p className='collegename'> {item.item.college_name}</p>
-          <p className='collegelocation'>Location:- {item.item.college_City}</p>
+          <p className='collegelocation'>Location:- {item.item.college_location}</p>
           <p className='aicteid'>AICTE ID:- ID123</p>
           <p className='zipcode'>Zipcode:-560054</p>
           <p className='type'>Type:- Central</p>
@@ -101,8 +107,25 @@ console.log("in i f...........")
       </div>
        })}
       </div>
+      {iterate && visibleResults < collegeList?.length && (
+        <div className="button-container">
+          <button className='loadmorebutton' onClick={handleLoadMore}>
+            <b>Load More</b>
+          </button>
+        </div>
+      )}
+      {!iterate && visibleResults < collegeList1?.length && (
+        <div className="button-container">
+          <button className='loadmorebutton' onClick={handleLoadMore}>
+            <b>Load More</b>
+          </button>
+        </div>
+      )}
     </>
   )
 }
 
 export default SearchCollege
+
+
+
