@@ -57,12 +57,12 @@ console.log("in i f...........")
         </div>
       </nav>
       <section className='firstsec'>
-        <img src="searchcollegebcgk.png" alt="" />
+        <img src="searchcollegebcgk2.jpg" className='searchcollegebcgk' alt="" />
         <h1>How can we help you?</h1>
         <div className="search-bar">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search About Colleges..."
             value={searchTerm}
             onChange={handleInputChange}
           />
@@ -81,8 +81,7 @@ console.log("in i f...........")
           <iframe src="https://www.msrit.edu" frameborder="0"></iframe>
         </div>
         <div className="card-details">
-          
-          <p className='collegename'> {item.value.name}</p>
+          <p className='collegename'>{item.value.name}</p>
           <p className='collegelocation'>Location:- {item.value.city}</p>
           <p className='aicteid'>AICTE ID:- ID123</p>
           <p className='zipcode'>Zipcode:-560054</p>
