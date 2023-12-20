@@ -43,21 +43,31 @@ console.log("in i f...........")
     <>
       <nav className='main-nav1'>
         <div className="logo1">
-          <img src="logo.png" alt="" />
+          <img className='logo_college' src="logo.png" alt="" />
         </div>
-        <div className="menu-link1">
+        {/* <div className="menu-link1">
           <ul>
             <li>
-              <a href="#">ABOUT US</a>
+              <a className ="aboutus_college" href="/aboutus">ABOUT US</a>
             </li>
             <li>
-              <a href="#">HOMEPAGE</a>
+              <a className = "homepage_college" href="/">HOMEPAGE</a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </nav>
       <section className='firstsec'>
         <img src="searchcollegebcgk2.jpg" className='searchcollegebcgk' alt="" />
+        <div className="menu-link1">
+          <ul>
+            <li>
+              <a className ="aboutus_college" href="/aboutus">ABOUT US</a>
+            </li>
+            <li>
+              <a className = "homepage_college" href="/">HOMEPAGE</a>
+            </li>
+          </ul>
+        </div>
         <h1>How can we help you?</h1>
         <div className="search-bar">
           <input

@@ -22,20 +22,20 @@ const SearchProjects = () => {
    <>
    <nav className='main-nav1'>
         <div className="logo1">
-            <img src="logo.png" alt="" />
+            <img className="logo_college" src="logo.png" alt="" />
         </div>
         <div className="menu-link1">
             <ul>
                 <li>
-                    <a href="#">ABOUT US</a>
+                    <a href="/aboutus">ABOUT US</a>
                 </li>
                 <li>
-                    <a href="#">HOMEPAGE</a>
+                    <a href="/">HOMEPAGE</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <section className='firstsec'>
+    <section className='firstsec_proj'>
         <img className='project-image' src="search_projects.jpg" alt="" />
         <h1 className='searchproj'>Search for Projects</h1>
         <div className="search-bar">

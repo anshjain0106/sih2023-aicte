@@ -1,11 +1,21 @@
 .project-image{
   height: 44rem;
-  width: 100rem;
+  width: 100%;
 }
 .searchproj{
   padding: 0.5rem 0rem;
+  color: white;
 }
-a {
+.firstsec_proj h1{
+  position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white; /* Change the text color to your preference */
+    font-size: 3.5rem; /* Change the font size to your preference */
+    font-weight: bold; /* Add any other styling as needed */
+}
+/* a {
   background-image: linear-gradient(
     to right,
     white,
@@ -23,9 +33,9 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
-}
+} */
 
-a:before{
+/* a:before{
   content: '';
   background: white;
   display: block;
@@ -43,6 +53,16 @@ a:hover {
 
 a:hover::before{
   width: 100%;
+} */
+.menu-link1 ul li{
+  list-style-type: none;
+}
+
+.menu-link1 ul li a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .project-card{
@@ -104,6 +124,12 @@ a:hover::before{
 
 .projects-results{
   margin:1rem;
+  color: #005AAA;
+}
+
+.project-results h1{
+  font-size: 3rem; /* Change the font size to your preference */
+        margin: 2rem;
 }
 
 .project-card:hover {

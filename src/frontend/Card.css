@@ -1,6 +1,6 @@
 .card-container{
-    width: 30%; /* Adjust as needed */
-  margin-bottom: 20px; /* Adjust spacing between rows */
+    width: 30%;
+  margin-bottom: 20px; 
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -19,6 +19,6 @@ iframe{
 .card-details{
     padding-left: 0.7rem;
 }
-p{
+.aicteid, .zipcode, .type, .collegelocation{
     padding: 0.5rem;
 }

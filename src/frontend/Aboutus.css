@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
 }
@@ -121,4 +121,119 @@
     padding-top: 1rem;
     font-size: 1.2rem;
     text-align: center;
+} */
+
+/* .about-us-logo {
+    width: 14rem;
+    height: 2.2rem;
+    margin: 0.5rem 1rem;    
+} */
+
+.logoImage_aboutus{
+    width: 14rem;
+    height: 2.2rem;
+    margin: 0.5rem 1rem;
+}
+
+.about-us-intro {
+    display: grid;
+    grid-template-columns: 2rem 1fr 1fr 2rem;
+    background-color: #EDFAFF;
+}
+
+.about-us-details {
+    grid-column: 2/3;
+    padding: 6rem 1rem 2rem 3rem;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.about-us-img {
+    grid-column: 3/4;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.about-us-heading {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.about-span, .working-container-span, .education-container-span {
+    color: #002a7a;
+    font-weight: bold;
+}
+
+.date-section {
+    padding: 2rem 1rem;
+}
+
+.date-section-img{
+    width: 100%;
+}
+
+.working-section {
+    display: grid;
+    grid-template-columns: 2rem 1fr 1fr 2rem;
+    background-color: #EDFAFF;
+    margin-bottom: 2rem;
+}
+
+.working-img {
+    grid-column: 2/3;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: 30rem;
+    width: 30rem;
+}
+
+.working-container {
+    grid-column: 3/4;
+    padding: 6rem 1rem 2rem 3rem;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.working-container-heading {
+    padding-bottom: 2rem;
+}
+
+.education-section{
+    background-color: #EDFAFF;
+    display: grid;
+    grid-template-columns: 2rem 1fr 1fr 2rem;
+}
+.education-container{
+    grid-column: 3/4;
+    padding: 6rem 1rem 2rem 3rem;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+.education-img{
+    grid-column: 2/3;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: 30rem;
+    width: 30rem;
+}
+.education-container-heading{
+    padding-bottom: 2rem;
+}
+.aboutus_footer{
+    /* margin-top: 3rem; */
+    text-align: center;
+    background-color: #002a7a;
+    color: white;
 }
