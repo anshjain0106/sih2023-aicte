@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 const SearchProjects = () => {
     const [projectname, setprojectname] = useState('');
     const [projectList, setProjectList] = useState([]);
+    const [projectList1, setProjectList1] = useState([]);
+    const [iterate,setiterate]=useState(true)
     const handleChange=(e)=>{
         setprojectname(e.target.value);
         
@@ -15,9 +17,19 @@ const SearchProjects = () => {
         e.preventDefault()
         const prj={projectname}
         const res=await axios.post('/api/college/searchProject',prj)
-        console.log(res);
-        setProjectList(res.data.data.documents)
-        console.log(projectList)
+        console.log(res.data.data);
+        if(res.data.msg=='Value set in REDIS'){
+            console.log("in if.......")
+            setProjectList(res.data.data)
+            setiterate(true)
+
+         }
+         else{
+             
+             setProjectList1(res.data.data.documents)
+             setiterate(false)
+         }
+        
     }
   return (
    <>
@@ -57,13 +69,23 @@ const SearchProjects = () => {
     </div>
     <div className="multiple-project-cards">
 
-       {
+       {iterate &&
         projectList.map((item)=>{
             return  <div className="project-card">
-            <h2 className='projTitle'>{item.value.projectname}</h2>
-            <button className='projID'>{item.id}</button>
-            <p className='prof-name'>{item.value.undertaken}</p>
-            <p className='college-name'>{item.value.collegename}</p>
+            <h2 className='projTitle'>{item.item.ProjectName}</h2>
+            <button className='projID'>{item.item.ProjectId}</button>
+            <p className='prof-name'>{item.item.Undertaken}</p>
+            <p className='college-name'>{item.item.CollegeName}</p>
+        </div>
+        }) 
+       }
+        {!iterate &&
+        projectList1.map((item)=>{
+            return  <div className="project-card">
+            <h2 className='projTitle'>{item.value.name}</h2>
+            <button className='projID'>{item.value.ProjectId}</button>
+            <p className='prof-name'>{item.value.Undertaken}</p>
+            <p className='college-name'>{item.value.CollegeName}</p>
         </div>
         }) 
        }

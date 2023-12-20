@@ -172,7 +172,7 @@ router.post("/searchProject",async(req,res)=>{
         "undertaken":output2.Undertaken
       })
     ]);
-    res.status(200).json({ success: true, data: "Value set in REDIS" ,data:ranked.data});
+    res.status(200).json({ success: true, msg: "Value set in REDIS" ,data:ranked});
   }
   else {
 
