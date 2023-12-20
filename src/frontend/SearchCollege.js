@@ -70,10 +70,10 @@ console.log("in i f...........")
         {/* <div className="menu-link1">
           <ul>
             <li>
-              <a className ="aboutus_college" href="/aboutus">ABOUT US</a>
+              <Link className ="aboutus_college" to="/aboutus">ABOUT US</Link>
             </li>
             <li>
-              <a className = "homepage_college" href="/">HOMEPAGE</a>
+              <Link className = "homepage_college" to="/">HOMEPAGE</Link>
             </li>
           </ul>
         </div> */}

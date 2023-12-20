@@ -6,14 +6,43 @@ const HomePage = () => {
     <>
        <div className="logo-container">
         <Link to='/'><img className='logoImage' src="logo.png" alt="" /></Link>
-       </div>
-       <section className='section1'>
-        <img className="backgroundImage" src="homepage_background.png" alt="" />
         <div className="headings">
             <p className='aboutUs'><Link className ="link1" to="/aboutus">ABOUT US</Link></p>
             <p className='collegeSearch'><Link className="link2" to="/searchCollege">COLLEGE SEARCH</Link></p>
             <p className='projectSearch'><Link className ="link3" to="/searchProjects">PROJECT SEARCH</Link></p>
         </div>
+       </div>
+
+       <div class="news-container">
+        <div class="title">
+            ANNOUNCEMENTS
+        </div>
+
+        <ul>
+            <li>
+            <Link className='annlink' target = "_blank" to ="https://aicte-india.org/sites/default/files/Public%20Notice_Working%20Professionals.jpg">Public Notice for Admission to Working Professionals</Link>
+            </li>
+            
+            <li>
+            <Link className='annlink' target = "_blank" to = "https://www.aicte-india.org/sites/default/files/Norms%20and%20Policies%20with%20respect%20to%20Grat%20of%20Autonomy%20to%20Polytechnic%20College.pdf">Norms and Policies with respect to Grant of Autonomy to Polytechnic Colleges.</Link>
+            </li>
+
+            <li>
+            <Link className='annlink' target = "_blank" to = "https://www.aicte-india.org/sites/default/files/Circular%20%20%26%20Data%20sheet.pdf">Placement of Indian PhD students and Postdoctoral Fellows pursuing R&D in Israel</Link>
+            </li>
+            <li>
+            <Link className='annlink' target = "_blank" to = "https://www.aicte-india.org/sites/default/files/Circular_Mathematics%20Week.pdf">Celebration of “Mathematics Week from 18th - 24th December 2023</Link>
+            </li>
+        </ul>
+    </div>
+
+       <section className='section1'>
+        <img className="backgroundImage" src="homepage_background.png" alt="" />
+        {/* <div className="headings">
+            <p className='aboutUs'><Link className ="link1" to="/aboutus">ABOUT US</Link></p>
+            <p className='collegeSearch'><Link className="link2" to="/searchCollege">COLLEGE SEARCH</Link></p>
+            <p className='projectSearch'><Link className ="link3" to="/searchProjects">PROJECT SEARCH</Link></p>
+        </div> */}
         <div className="homeHeading">
             <h1 className='welcomeAICTE'>WELCOME TO AICTE</h1>
         </div>
