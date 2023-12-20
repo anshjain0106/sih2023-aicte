@@ -8,7 +8,27 @@ const SearchCollege = () => {
   const [collegeList, setCollegeList] = useState([]);
   const [collegeList1, setCollegeList1] = useState([]);
   const [iterate ,setiterate]=useState(true)
-  const [visibleResults, setVisibleResults] = useState(1);
+  const [visibleResults, setVisibleResults] = useState(10);
+
+ const initialLinks = [
+  'https://bit-bangalore.edu.in/',
+  'https://www.bmsce.ac.in/',
+  'https://www.acsce.edu.in/',
+  'https://www.dsce.edu.in/',
+  'https://iiitkalyani.ac.in/',
+  'https://www.iith.ac.in/',
+  'https://www.nmit.ac.in/',
+  'https://newhorizoncollegeofengineering.in/',
+  'http://www.iimchyderabad.com/',
+  'https://www.acharya.ac.in/',
+  'https://www.cmrit.ac.in/',
+  'https://www.rvce.edu.in/',
+  'https://www.iitbbs.ac.in/',
+  'https://www.iitr.ac.in/',
+  'https://www.iitkgp.ac.in/',
+  'https://www.iitb.ac.in/',
+ ]
+
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -32,6 +52,7 @@ console.log("in i f...........")
       setiterate(false)
       console.log(collegeList)
     }
+    setVisibleResults(10);
     //   console.log(res.data.data.documents)
   };
 
@@ -88,7 +109,7 @@ console.log("in i f...........")
         console.log(item.value)
         return <div className="card-container">
         <div className="card">
-          <iframe src="https://www.msrit.edu" frameborder="0"></iframe>
+          <iframe src={initialLinks[index%initialLinks.length]} frameborder="0"></iframe>
         </div>
         <div className="card-details">
           <p className='collegename'>{item.value.name}</p>
@@ -103,7 +124,7 @@ console.log("in i f...........")
         console.log(item.value)
         return <div className="card-container">
         <div className="card">
-          <iframe src="https://www.msrit.edu" frameborder="0"></iframe>
+          <iframe src={initialLinks[index%initialLinks.length]}  frameborder="0"></iframe>
         </div>
         <div className="card-details">
           
