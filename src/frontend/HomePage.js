@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <>
        <div className="logo-container">
-        <img className='logoImage' src="logo.png" alt="" />
+        <Link to='/'><img className='logoImage' src="logo.png" alt="" /></Link>
        </div>
        <section className='section1'>
         <img className="backgroundImage" src="homepage_background.png" alt="" />

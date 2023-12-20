@@ -1,5 +1,6 @@
 import React from 'react'
 import './Aboutus.css'
+import { Link } from 'react-router-dom'
 
 const Aboutus = () => {
   return (
@@ -48,7 +49,7 @@ const Aboutus = () => {
     </section>
     <footer className='aboutus_footer'>© 2023 Team Dev Yogis. All rights reserved.</footer> */}
      <div className="about-us-logo">
-        <img className='logoImage_aboutus' src="logo.png" alt="" />
+        <Link to ='/'><img className='logoImage_aboutus' src="logo.png" alt="" /></Link>
     </div>
     <section className='about-us-intro'>
         <div className='about-us-details'>

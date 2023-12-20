@@ -1,5 +1,5 @@
 .project-image{
-  height: 44rem;
+  height: 39.2rem;
   width: 100%;
 }
 .searchproj{
@@ -14,6 +14,11 @@
     color:white; /* Change the text color to your preference */
     font-size: 3.5rem; /* Change the font size to your preference */
     font-weight: bold; /* Add any other styling as needed */
+}
+.logo_college{
+  width: 20rem;
+    height: 3.3rem;
+    margin: 0.5rem 0rem;
 }
 /* a {
   background-image: linear-gradient(
@@ -65,12 +70,17 @@ a:hover::before{
   font-size: 1.1rem;
 }
 
+.results_proj{
+  font-size: 2.2rem;
+  text-align: center;
+}
+
 .project-card{
-  width: 60%;
+  width: 70%;
   z-index: 0;
   background-color:#f2f8f9;
   padding-top: 1rem;
-  margin-left: 5rem;
+  margin-left: 15rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
@@ -97,7 +107,16 @@ a:hover::before{
 
 .projID, .projTitle{
   margin: 0.3rem;
+  padding: 0rem 0.5rem;
   color: #262626;
+}
+
+.projID{
+  margin: 1rem;
+}
+
+.projTitle{
+  text-align: center;
 }
 
 .projID{
@@ -117,14 +136,20 @@ a:hover::before{
   background-color: #F3F3F3;
 }
 
+.results_proj{
+  color: #005AAA;
+}
+
 .prof-name, .college-id, .college-name{
-  padding: 0.3rem;
+  padding: 0.3rem 1rem;
   color: #666666;
 }
 
 .projects-results{
-  margin:1rem;
-  color: #005AAA;
+  background-color: #EDFAFF;
+    margin: 2.5rem 2rem;
+    height: 4rem;
+    text-align: center;
 }
 
 .project-results h1{
