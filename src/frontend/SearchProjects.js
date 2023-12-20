@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react'; 
 import { Link } from 'react-router-dom';
 const SearchProjects = () => {
+    let arr1=[]
     const [projectname, setprojectname] = useState('');
     const [projectList, setProjectList] = useState([]);
     const [projectList1, setProjectList1] = useState([]);
@@ -22,12 +23,15 @@ const SearchProjects = () => {
             console.log("in if.......")
             setProjectList(res.data.data)
             setiterate(true)
+          
+        }
+        else{
+            
+            setProjectList1(res.data.data.documents)
+            
 
-         }
-         else{
-             
-             setProjectList1(res.data.data.documents)
-             setiterate(false)
+            setiterate(false)
+
          }
         
     }
@@ -79,13 +83,12 @@ const SearchProjects = () => {
         </div>
         }) 
        }
-        {!iterate &&
-        projectList1.map((item)=>{
+        {!iterate && projectList1.map((item)=>{
             return  <div className="project-card">
-            <h2 className='projTitle'>{item.value.name}</h2>
-            <button className='projID'>{item.value.ProjectId}</button>
-            <p className='prof-name'>{item.value.Undertaken}</p>
-            <p className='college-name'>{item.value.CollegeName}</p>
+            <h2 className='projTitle'>{item.value.projectname} </h2>
+            <button className='projID'>{item.id}</button>
+            <p className='prof-name'>{item.value.undertaken}</p>
+            <p className='college-name'>{item.value.collegename}</p>
         </div>
         }) 
        }
