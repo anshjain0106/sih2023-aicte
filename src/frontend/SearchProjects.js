@@ -2,6 +2,7 @@ import React from 'react'
 import './SearchProjects.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react'; 
+import { Link } from 'react-router-dom';
 const SearchProjects = () => {
     const [projectname, setprojectname] = useState('');
     const [projectList, setProjectList] = useState([]);
@@ -27,10 +28,10 @@ const SearchProjects = () => {
         <div className="menu-link1">
             <ul>
                 <li>
-                    <a href="/aboutus">ABOUT US</a>
+                    <Link to="/aboutus">ABOUT US</Link>
                 </li>
                 <li>
-                    <a href="/">HOMEPAGE</a>
+                    <Link to="/">HOMEPAGE</Link>
                 </li>
             </ul>
         </div>

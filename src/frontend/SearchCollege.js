@@ -3,6 +3,7 @@ import './SearchCollege.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './Card.css'
+import { Link } from 'react-router-dom';
 const SearchCollege = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [collegeList, setCollegeList] = useState([]);
@@ -82,10 +83,10 @@ console.log("in i f...........")
         <div className="menu-link1">
           <ul>
             <li>
-              <a className ="aboutus_college" href="/aboutus">ABOUT US</a>
+              <Link className ="aboutus_college" to="/aboutus">ABOUT US</Link>
             </li>
             <li>
-              <a className = "homepage_college" href="/">HOMEPAGE</a>
+              <Link className = "homepage_college" to="/">HOMEPAGE</Link>
             </li>
           </ul>
         </div>

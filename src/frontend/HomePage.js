@@ -1,6 +1,6 @@
 import React from 'react'
 import './HomePage.css'
-
+import { Link } from 'react-router-dom'
 const HomePage = () => {
   return (
     <>
@@ -10,9 +10,9 @@ const HomePage = () => {
        <section className='section1'>
         <img className="backgroundImage" src="homepage_background.png" alt="" />
         <div className="headings">
-            <p className='aboutUs'><a className ="link1" href="/aboutus">ABOUT US</a></p>
-            <p className='collegeSearch'><a className="link2" href="/searchCollege">COLLEGE SEARCH</a></p>
-            <p className='projectSearch'><a className ="link3" href="/searchProjects">PROJECT SEARCH</a></p>
+            <p className='aboutUs'><Link className ="link1" to="/aboutus">ABOUT US</Link></p>
+            <p className='collegeSearch'><Link className="link2" to="/searchCollege">COLLEGE SEARCH</Link></p>
+            <p className='projectSearch'><Link className ="link3" to="/searchProjects">PROJECT SEARCH</Link></p>
         </div>
         <div className="homeHeading">
             <h1 className='welcomeAICTE'>WELCOME TO AICTE</h1>
