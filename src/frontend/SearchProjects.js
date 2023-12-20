@@ -23,7 +23,7 @@ const SearchProjects = () => {
    <>
    <nav className='main-nav1'>
         <div className="logo1">
-            <img className="logo_college" src="logo.png" alt="" />
+            <Link to = '/'><img className="logo_college" src="logo.png" alt="" /></Link>
         </div>
         <div className="menu-link1">
             <ul>
@@ -53,7 +53,7 @@ const SearchProjects = () => {
         </div>
     </section>
     <div className="projects-results">
-        <h1>Results</h1>
+        <h1 className='results_proj'>RESULTS</h1>
     </div>
     <div className="multiple-project-cards">
 

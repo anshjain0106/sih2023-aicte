@@ -65,7 +65,7 @@ console.log("in i f...........")
     <>
       <nav className='main-nav1'>
         <div className="logo1">
-          <img className='logo_college' src="logo.png" alt="" />
+          <Link to ='/'><img className='logo_college' src="logo.png" alt="" /></Link>
         </div>
         {/* <div className="menu-link1">
           <ul>
@@ -103,7 +103,9 @@ console.log("in i f...........")
           <button className="searchbutton" onClick={handleSearch}><b>Search</b></button>
         </div>
       </section>
-      <h3>Results</h3>
+      <div className="result-heading">
+      <h3 className='results_college'>RESULTS</h3>
+      </div>
       <div className="multiplecards">
 
        { !iterate && collegeList1?.slice(0,visibleResults).map((item,index)=>{
