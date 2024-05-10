@@ -39,7 +39,7 @@ const SearchProjects = () => {
    <>
    <nav className='main-nav1'>
         <div className="logo1">
-            <Link to = '/'><img className="logo_college" src="logo.png" alt="" /></Link>
+            {/* <Link to = '/'><img className="logo_college" src="logo.png" alt="" /></Link> */}
         </div>
         <div className="menu-link1">
             <ul>

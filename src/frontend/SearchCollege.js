@@ -34,6 +34,11 @@ const SearchCollege = () => {
     setSearchTerm(event.target.value);
   };
 
+
+  const sort=(data)=>{
+    data.sort((a,b)=>a.nirf-b.nirf)
+    return data
+  }
   const handleSearch = async (e) => {
     e.preventDefault();
 
@@ -43,13 +48,14 @@ const SearchCollege = () => {
     console.log(res.data)
     if(res.data.msg=="value set in reddis"){
 console.log("in i f...........")
-      setCollegeList(res.data.data);
+      
+      setCollegeList(sort(res.data.data));
       setiterate(true)
       console.log(res.data.data) 
     }
     else{
       console.log(res.data.data.documents)
-      setCollegeList1(res.data.data.documents)
+      setCollegeList1(sort(res.data.data.documents))
       setiterate(false)
       console.log(collegeList)
     }
@@ -65,7 +71,7 @@ console.log("in i f...........")
     <>
       <nav className='main-nav1'>
         <div className="logo1">
-          <Link to ='/'><img className='logo_college' src="logo.png" alt="" /></Link>
+          {/* <Link to ='/'><img className='logo_college' src="logo.png" alt="" /></Link> */}
         </div>
         {/* <div className="menu-link1">
           <ul>

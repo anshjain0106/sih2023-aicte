@@ -23,5 +23,10 @@ router.post('/insertInMongo',async(req,res)=>{
 
     res.status(200).json({success:true,message:"Done"});
 })
+router.post("/deleteInProject",async(req,res)=>{
+    const res1=await college_Schema.findOneAndDelete({CollegeId:123})
+    // console.log(res1)
+    res.send("deleted")
+})
 
 module.exports=router;

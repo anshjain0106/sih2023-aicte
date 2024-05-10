@@ -8,9 +8,10 @@ router.post('/insertInPostgre',async(req,res)=>{
     const location=req.body.location
     const query=collegeName+" "+location
     const result = await generateEmbed(query);
-    
-    const insertQuery = 'INSERT INTO college_details1 values($1,$2,$3,$4)';
-    const res1 = await CockClient.query(insertQuery,[collegeId,collegeName,location,result]);
+    const nirf=parseInt(req.body.nirf)
+    console.log(nirf)  
+    const insertQuery = 'INSERT INTO college_details1 values($1,$2,$3,$4,$5)';
+    const res1 = await CockClient.query(insertQuery,[collegeId,collegeName,location,nirf,result]);
     const checking = await CockClient.query("Select * from college_details1");
     // console.log(checking.rows);
 

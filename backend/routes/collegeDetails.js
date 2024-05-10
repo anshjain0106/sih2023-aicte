@@ -60,13 +60,16 @@ async function cosineSimilarity(embedding1, embedding2) {
 
 router.post("/searchcollege", async (req, res) => {
 
+
+
+
   //First searching in REDIS
   var collegeName = req.body.searchTerm;
   collegeName += '*';
   let result = await client.ft.search(
     'idx:colleges',
     `${collegeName}`
-  );
+  ); 
   var cacheRes = JSON.stringify(result, null, 2);
   cacheRes = JSON.parse(cacheRes);
 
@@ -112,6 +115,10 @@ router.post("/searchcollege", async (req, res) => {
         "city": output2.college_location
       })
     ]);
+    
+
+
+
     res.status(200).json({ success: true, data: ranked,msg:"value set in reddis" });
   }
   else {
@@ -121,6 +128,13 @@ router.post("/searchcollege", async (req, res) => {
   }
 
 })
+
+
+
+
+
+
+
 
 router.post("/searchProject",async(req,res)=>{
   //First searching in REDIS
@@ -141,7 +155,8 @@ router.post("/searchProject",async(req,res)=>{
     const newdata = [];
 
     for (var i = 0; i < r.length; i++) {
-
+      
+      if(r[i].EmbeddedArray.length!=0){
       const similarityScore = await cosineSimilarity((queryEmbed), (r[i].EmbeddedArray));
       const data = {
         item: r[i],
@@ -150,7 +165,7 @@ router.post("/searchProject",async(req,res)=>{
       newdata.push(data);
 
     }
-
+  }
     const ranked = newdata.sort(
       (a, b) => b.similarityScore - a.similarityScore
     );

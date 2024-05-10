@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <>
        <div className="logo-container">
-        <Link to='/'><img className='logoImage' src="logo.png" alt="" /></Link>
+        {/* <Link to='/'><img className='logoImage' src="logo.png" alt="" /></Link> */}
         <div className="headings">
             <p className='aboutUs'><Link className ="link1" to="/aboutus">ABOUT US</Link></p>
             <p className='collegeSearch'><Link className="link2" to="/searchCollege">COLLEGE SEARCH</Link></p>
@@ -18,7 +18,7 @@ const HomePage = () => {
             ANNOUNCEMENTS
         </div>
 
-        <ul>
+        <ul> 
             <li>
             <Link className='annlink' target = "_blank" to ="https://aicte-india.org/sites/default/files/Public%20Notice_Working%20Professionals.jpg">Public Notice for Admission to Working Professionals</Link>
             </li>
@@ -44,18 +44,18 @@ const HomePage = () => {
             <p className='projectSearch'><Link className ="link3" to="/searchProjects">PROJECT SEARCH</Link></p>
         </div> */}
         <div className="homeHeading">
-            <h1 className='welcomeAICTE'>WELCOME TO AICTE</h1>
+            {/* <h1 className='welcomeAICTE'>WELCOME </h1> */}
         </div>
        </section>
-       <div className="section2Heading">
+       {/* <div className="section2Heading">
         <h2 className='part2'><span className='part1'>WHAT IS</span> AICTE?</h2>
-       </div>
-       <section className='section2'>
+       </div> */}
+       {/* <section className='section2'>
         <p className='section2Details'>
         All India Council for Technical Education (AICTE) was set up in November 1945 as a national-level Apex Advisory Body to conduct a survey on the facilities available for technical education and to promote development in the country in a coordinated and integrated manner.
         </p>
         <img className='section2Img' src="section2pic.png" alt="" />
-       </section>
+       </section> */}
        <div className="section3Heading">
         <h2 className='part4'>INITIATIVES & <span className='part3'>SCHEMES</span></h2>
        </div>
@@ -103,7 +103,7 @@ const HomePage = () => {
 		</div>
 	</div>
 </section>
-<footer className='homepage_footer'>© 2023 Team Dev Yogis. All rights reserved.</footer>
+<footer className='homepage_footer'>© 2024  All rights reserved.</footer>
     </>
   )
 }

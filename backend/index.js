@@ -17,7 +17,7 @@ connectDb();
 connectCockroachDb();
 
 //connect to redis
-connectRedis();
+// connectRedis();
 
 //openai connection
 // console.log(result);
@@ -32,7 +32,7 @@ app.use('/api/mongoDb',require('./routes/mongoFunctionality'));
 app.use('/api/postGre',require('./routes/postgreSqlFunctionality'))
 // app.use('/api/research',require('./routes/ResearchDetails'));
 
-
+ 
 app.listen(4000,()=>{
     // console.log(API_KEY);
     console.log("Listening at port 4000");

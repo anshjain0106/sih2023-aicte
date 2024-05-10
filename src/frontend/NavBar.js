@@ -14,7 +14,7 @@ const NavBar = () => {
                     <a href="#">BTN-1</a>
                 </li>
                 <li>
-                    <a href="#">BTN-1</a>
+                    <a href="#">BTN-1</a>  
                 </li>
                 <li>
                     <a href="#">BTN-1</a>

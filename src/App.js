@@ -12,10 +12,12 @@ function App() {
       <Route path = '/aboutus' element={<Aboutus/>} />
       <Route path = '/searchCollege' element={<SearchCollege/>} />
       <Route path='/searchProjects' element={<SearchProjects/>} />
-      </Routes>
-    </BrowserRouter>
+      </Routes> 
+    </BrowserRouter>  
+       
     // <SearchCollege/>
-  );
-}
+  ); 
+}  
 
+ 
 export default App;
