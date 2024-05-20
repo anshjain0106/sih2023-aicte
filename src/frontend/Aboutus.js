@@ -55,7 +55,7 @@ const Aboutus = () => {
         <div className='about-us-details'>
             <div className="about-us-heading">
                 <h1><span className='about-span'>ABOUT </span>US</h1> 
-            </div>
+            </div> 
             <div className='about-us-description'>
                 <p className='about-description'>The beginning of formal technical education in India can be dated back to the mid-19th century. Major policy initiatives in the pre-independence period included the appointment of the Indian Universities Commission in 1902, issue of the Indian Education Policy Resolution in 1904, and the Governor General’s policy statement of 1913 stressing the importance of technical education, the establishment of IISc in Bangalore, Institute for Sugar, Textile & Leather Technology in Kanpur, N.C.E. in Bengal in 1905, and industrial schools in several provinces.</p>
             </div>

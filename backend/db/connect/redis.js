@@ -2,10 +2,10 @@ const redis = require('redis');
 
 const client = redis.createClient({
     legacyMode: false,
-    password: 'a9bJGInel1lSQ4vejmL7ETFFfGZ9gWgK',
+    password: 'kvzNQN6rL6Mnp1sr7VIjK59zwKbwy4Rx',
     socket: {
-        host: 'redis-10785.c57.us-east-1-4.ec2.cloud.redislabs.com',
-        port: 10785,
+        host: 'redis-13487.c11.us-east-1-2.ec2.redns.redis-cloud.com',
+        port: 13487,
         connectTimeout: 100000
     }
 }); 

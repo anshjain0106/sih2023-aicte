@@ -17,7 +17,7 @@ connectDb();
 connectCockroachDb();
 
 //connect to redis
-// connectRedis();
+connectRedis();
 
 //openai connection
 // console.log(result);

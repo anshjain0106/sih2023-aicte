@@ -9,6 +9,7 @@ const college_Schema = require('../schema/college_project')
 // const client = require("../db/schema/clientSchema");
 
 const { connectCockroachDb, CockClient } = require('../db/connect/postgreSql');
+const { parse } = require("dotenv");
 
 
 // router.post("/searchcollege1",async (req,res)=>{
@@ -78,7 +79,7 @@ router.post("/searchcollege", async (req, res) => {
   if (countElements == 0) {
 
     //Searching In Cockroach DB
-    const selectQuery = 'SELECT * FROM college_details1'
+    const selectQuery = 'SELECT * FROM collegeDetails1'
     const result = await CockClient.query(selectQuery);
     var queryEmbed = await generateEmbed(collegeName);
 
@@ -115,11 +116,23 @@ router.post("/searchcollege", async (req, res) => {
         "city": output2.college_location
       })
     ]);
-    
+     
 
-
-
-    res.status(200).json({ success: true, data: ranked,msg:"value set in reddis" });
+  
+    // console.log(ranked)
+    let loc=ranked[0].item.college_location
+    let typ=ranked[0].item.college_type
+    let dt=[]
+    for (let index = 0; index < ranked.length; index++) {
+      if(ranked[index].item.college_location==loc && typ==ranked[index].item.college_type){
+        dt.push(ranked[index]);
+      }
+      
+    }
+    // console.log(dt)
+     dt.sort((a,b)=>parseInt(a.item.nirf_ranking)-parseInt(b.item.nirf_ranking))
+     console.log(dt)
+    res.status(200).json({ success: true, data: dt,msg:"value set in reddis" });
   }
   else {
 
@@ -127,7 +140,7 @@ router.post("/searchcollege", async (req, res) => {
 
   }
 
-})
+}) 
 
 
 
